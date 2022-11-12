@@ -2,15 +2,19 @@
 import streamlit as st
 
 # Import other dependencies
-# from views import Pages
+from views import Pages
 
 
 # List of Pages
-page_list = []
+page_list = [
+    "Introduction"
+]
 
 # Sidebar with project title
 st.sidebar.title(':scroll: Team Hortons')
-st.sidebar.radio('Explore: ', page_list)
+page = st.sidebar.radio('Explore: ', page_list)
 
 
 # Showing which pages are shown
+if page == "Introduction":
+    Pages.intro()
